@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 100%;
+            height: 600px;
+            background: gray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box {
+            width: 400px;
+            height: 80px;
+            background: darkmagenta;
+            display: flex;
+        }
+
+        button{
+            width: 80px;
+            height: 80px;
+            background: darkgoldenrod;
+            border: none;
+            font-size: 50px;
+            cursor: pointer;
+        }
+        input{
+            background: red;
+            width: 240px;
+            height: 78px;
+            font-size: 50px;
+            text-align: center;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <div>
+                <button class="btn-1" id="sub">-</button>
+            </div>
+            <input type="text" id="qtyBox" readonly="" value="0">
+            <div>
+                <button class="btn-2" id="add">+</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        let addBtn = document.querySelector('#add');
+        let subBtn = document.querySelector('#sub');
+        let qtyBox = document.querySelector('#qtyBox');
+
+        // console.log(addBtn,subBtn,qtyBox);
+
+        addBtn.addEventListener('click',()=>{
+            qtyBox.value = parseInt(qtyBox.value) + 1;
+        });
+        subBtn.addEventListener('click',()=>{
+            qtyBox.value = parseInt(qtyBox.value) - 1;
+            if(qtyBox.value < 0){
+                qtyBox.value = 0;
+            }
+        });
+        
+    </script>
+</body>
+
+</html>
